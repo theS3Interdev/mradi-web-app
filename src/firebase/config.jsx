@@ -1,6 +1,24 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
-import { getFirestore, serverTimestamp } from 'firebase/firestore';
+import {
+	getAuth,
+	onAuthStateChanged,
+	signInWithEmailAndPassword,
+	signOut,
+	createUserWithEmailAndPassword,
+	updateProfile,
+} from 'firebase/auth';
+import {
+	getFirestore,
+	Timestamp,
+	collection,
+	onSnapshot,
+	query,
+	where,
+	orderBy,
+	addDoc,
+	doc,
+	deleteDoc,
+} from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
 /** firebase configuration object containing keys and identifiers */
@@ -23,4 +41,22 @@ const db = getFirestore(app);
 const storage = getStorage(app);
 
 /** export services */
-export { auth, db, serverTimestamp, storage };
+export {
+	auth,
+	onAuthStateChanged,
+	signInWithEmailAndPassword,
+	signOut,
+	createUserWithEmailAndPassword,
+	updateProfile,
+	db,
+	Timestamp,
+	collection,
+	onSnapshot,
+	query,
+	where,
+	orderBy,
+	addDoc,
+	doc,
+	deleteDoc,
+	storage,
+};
