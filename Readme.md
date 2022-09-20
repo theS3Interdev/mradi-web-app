@@ -2,8 +2,6 @@
 
 ## Summary
 
-## Summary
-
 React.JS project created to learn about integration React.JS with Firebase CLI version 9.x.
 
 The project also puts into practice proper management of Git by organizing code into staging and production ready branches so that there is always a version of the code ready to go.

@@ -6,6 +6,69 @@
 
 @layer base {
 	body {
-		@apply font-ubuntu antialiased;
+		@apply m-0 bg-backgroudColor font-ubuntu antialiased;
 	}
+
+	ul,
+	li,
+	p,
+	h1,
+	h2,
+	h3,
+	h4 {
+		@apply m-0 p-0;
+	}
+
+	ul {
+		@apply list-none;
+	}
+}
+
+@layer components {
+	/** page layout start */
+	.page-title {
+		@apply inline-block text-lg text-headingColor;
+	}
+
+	.btn {
+		@apply cursor-pointer rounded border-[1px] border-solid border-primaryColor bg-white py-2 px-3 text-lg text-primaryColor;
+	}
+
+	.btn:hover {
+		@apply bg-primaryColor text-white;
+	}
+	/** page layout end */
+
+	/* forms start */
+	label {
+		@apply my-6 mx-auto block;
+	}
+
+	label span {
+		@apply mb-[6px] block;
+	}
+
+	input,
+	textarea {
+		@apply box-border w-full rounded border-[1px] border-solid border-lightGray py-2 px-[6px] text-lg text-sonicSilver;
+	}
+
+	textarea {
+		@apply min-h-[160px];
+	}
+
+	.error {
+		@apply my-[10px] mx-0 rounded border-[1px] border-solid border-red-600 bg-pink-300 p-2 text-red-600;
+	}
+	/* forms end */
+
+	/** app component start */
+	.App {
+		@apply flex;
+	}
+
+	.App .container {
+		@apply flex-grow py-0 px-[60px];
+	}
+	/** app component end */
 }
