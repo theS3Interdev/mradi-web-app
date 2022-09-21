@@ -131,4 +131,10 @@
 		@apply invert-0;
 	}
 	/** sidebar end */
+
+	/** sign up form start*/
+	.auth-form {
+		@apply my-[60px] mx-auto max-w-[360px] rounded-lg border-[1px] border-solid border-lightGray bg-white p-10 shadow shadow-headingColor;
+	}
+	/** sign up form end*/
 }
