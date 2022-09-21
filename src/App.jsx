@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import Navbar from './components/navbar';
+import Sidebar from './components/sidebar';
 import Dashboard from './pages/dashboard/dashboard';
 import Create from './pages/create/create';
 import Signin from './pages/signin/signin';
@@ -8,8 +9,9 @@ import Project from './pages/projects/project';
 
 const App = () => {
 	return (
-		<div className="App">
+		<div className="app">
 			<BrowserRouter>
+				<Sidebar />
 				<div className="container">
 					<Navbar />
 					<Routes>
