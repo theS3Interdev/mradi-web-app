@@ -31,7 +31,7 @@
 	}
 
 	.btn {
-		@apply cursor-pointer rounded border-[1px] border-solid border-primaryColor bg-white py-2 px-3 text-lg text-primaryColor;
+		@apply cursor-pointer rounded-lg border-[1px] border-solid border-primaryColor bg-white py-2 px-3 text-lg text-primaryColor;
 	}
 
 	.btn:hover {
@@ -50,7 +50,7 @@
 
 	input,
 	textarea {
-		@apply box-border w-full rounded border-[1px] border-solid border-lightGray py-2 px-[6px] text-lg text-sonicSilver;
+		@apply box-border w-full rounded-lg border-[1px] border-solid border-lightGray py-2 px-[6px] text-lg text-sonicSilver;
 	}
 
 	textarea {
@@ -58,7 +58,7 @@
 	}
 
 	.error {
-		@apply my-[10px] mx-0 rounded border-[1px] border-solid border-red-600 bg-pink-300 p-2 text-red-600;
+		@apply my-[10px] mx-0 rounded-lg border-[1px] border-solid border-red-600 bg-pink-300 p-2 text-red-600;
 	}
 	/* forms end */
 
@@ -68,7 +68,29 @@
 	}
 
 	.App .container {
-		@apply flex-grow py-0 px-[60px];
+		@apply mx-auto grow py-0 px-2;
 	}
 	/** app component end */
+
+	/** navigation bar start */
+	.navbar {
+		@apply mb-20 box-border w-full py-[30px] px-0;
+	}
+
+	.navbar ul {
+		@apply my-0 mx-auto flex items-center justify-end;
+	}
+
+	.navbar .logo {
+		@apply mr-auto flex items-center text-2xl font-bold tracking-wide text-headingColor;
+	}
+
+	.navbar .logo img {
+		@apply mr-[10px] -mt-1 w-9 invert-0;
+	}
+
+	.navbar a {
+		@apply mr-5 text-darkGray no-underline;
+	}
+	/** navigation bar end */
 }

@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import Dashboard from './pages/dashboard/dashboard';
 import Create from './pages/create/create';
 import Signin from './pages/signin/signin';
@@ -10,6 +11,7 @@ const App = () => {
 		<div className="App">
 			<BrowserRouter>
 				<div className="container">
+					<Navbar />
 					<Routes>
 						<Route path="/" element={<Dashboard />} />
 						<Route path="/create" element={<Create />} />
