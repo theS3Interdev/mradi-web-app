@@ -63,12 +63,12 @@
 	/* forms end */
 
 	/** app component start */
-	.App {
+	.app {
 		@apply flex;
 	}
 
-	.App .container {
-		@apply mx-auto grow py-0 px-2;
+	.app .container {
+		@apply grow py-0 px-5;
 	}
 	/** app component end */
 
@@ -93,4 +93,42 @@
 		@apply mr-5 text-darkGray no-underline;
 	}
 	/** navigation bar end */
+
+	/** sidebar start */
+	.sidebar {
+		@apply relative box-border min-h-screen w-[300px] min-w-[300px] bg-primaryColor text-white;
+	}
+
+	.sidebar-content {
+		@apply fixed w-[inherit];
+	}
+
+	.sidebar .user {
+		@apply border-[1px] border-solid border-headingColor py-10 px-[30px] text-center font-bold tracking-wide;
+	}
+
+	.sidebar .links {
+		@apply mt-20 ml-5;
+	}
+
+	.sidebar .links li {
+		@apply mt-[10px];
+	}
+
+	.sidebar .links a {
+		@apply box-border flex w-full p-[10px] text-white no-underline;
+	}
+
+	.sidebar .links img {
+		@apply mr-[10px] invert-0;
+	}
+
+	.sidebar .links a.active {
+		@apply rounded-t-lg rounded-r-none rounded-b-none rounded-l-lg bg-backgroudColor text-textColor;
+	}
+
+	.sidebar .links .active img {
+		@apply invert-0;
+	}
+	/** sidebar end */
 }
