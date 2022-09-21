@@ -14,6 +14,7 @@ module.exports = {
 				backgroudColor: '#F4F4F4',
 				sonicSilver: '#777777',
 				lightGray: '#DDDDDD',
+				darkGray: '#333333',
 			},
 		},
 	},
