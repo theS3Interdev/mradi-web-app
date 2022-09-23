@@ -58,7 +58,7 @@
 	}
 
 	.error {
-		@apply my-[10px] mx-0 rounded-lg border-[1px] border-solid border-red-600 bg-pink-300 p-2 text-red-600;
+		@apply my-5 mx-0 rounded-lg border-[1px] border-solid border-red-600 bg-pink-300 p-2 text-red-600;
 	}
 	/* forms end */
 
