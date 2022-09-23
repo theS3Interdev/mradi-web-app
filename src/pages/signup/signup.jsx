@@ -46,7 +46,7 @@ const Signup = () => {
 					onChange={(e) => setEmail(e.target.value)}
 					value={email}
 					required
-					className="rounded-lg"
+					className="rounded"
 				/>
 			</label>
 
@@ -57,7 +57,7 @@ const Signup = () => {
 					onChange={(e) => setPassword(e.target.value)}
 					value={password}
 					required
-					className="rounded-lg"
+					className="rounded"
 				/>
 			</label>
 
@@ -68,13 +68,13 @@ const Signup = () => {
 					onChange={(e) => setDisplayName(e.target.value)}
 					value={displayName}
 					required
-					className="rounded-lg"
+					className="rounded"
 				/>
 			</label>
 
 			<label>
 				<span>Profile Thumbnail:</span>
-				<input required type="file" onChange={handleFileChange} />
+				<input type="file" onChange={handleFileChange} required className="rounded" />
 
 				{thumbnailError && <div className="error">{thumbnailError}</div>}
 			</label>
