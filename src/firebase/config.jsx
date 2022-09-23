@@ -19,7 +19,7 @@ import {
 	doc,
 	deleteDoc,
 } from 'firebase/firestore';
-import { getStorage } from 'firebase/storage';
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 /** firebase configuration object containing keys and identifiers */
 const firebaseConfig = {
@@ -59,4 +59,7 @@ export {
 	doc,
 	deleteDoc,
 	storage,
+	ref,
+	uploadBytes,
+	getDownloadURL,
 };
