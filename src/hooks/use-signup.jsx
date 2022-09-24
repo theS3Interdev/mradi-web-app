@@ -8,6 +8,9 @@ import {
 	ref,
 	uploadBytes,
 	getDownloadURL,
+	db,
+	doc,
+	setDoc,
 } from '../firebase/config';
 
 export const useSignup = () => {
@@ -40,6 +43,13 @@ export const useSignup = () => {
 
 			/** add the display name and photo url to the user profile */
 			await updateProfile(auth.currentUser, { displayName, photoURL: imageURL });
+
+			/** add a new document in collection "users" */
+			await setDoc(doc(db, 'users', userCredential.user.uid), {
+				online: true,
+				displayName,
+				photoURL: imageURL,
+			});
 
 			/** dispatch signin action */
 			dispatch({ type: 'SIGNIN', payload: userCredential.user });
