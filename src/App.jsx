@@ -1,7 +1,10 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuthContext } from './hooks/use-auth-context';
+
 import Navbar from './components/navbar';
 import Sidebar from './components/sidebar';
+import OnlineUsers from './components/online-users';
+
 import Dashboard from './pages/dashboard/dashboard';
 import Create from './pages/create/create';
 import Signin from './pages/signin/signin';
@@ -36,6 +39,8 @@ const App = () => {
 							<Route path="/signup" element={user ? <Navigate to="/" /> : <Signup />} />
 						</Routes>
 					</div>
+
+					{user && <OnlineUsers />}
 				</BrowserRouter>
 			)}
 		</div>
