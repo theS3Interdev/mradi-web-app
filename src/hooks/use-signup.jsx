@@ -20,8 +20,8 @@ export const useSignup = () => {
 	const { dispatch } = useAuthContext();
 
 	const signup = async (email, password, displayName, thumbnail) => {
-		setIsPending(true);
 		setError(null);
+		setIsPending(true);
 
 		try {
 			/** signup procedure */
@@ -61,8 +61,8 @@ export const useSignup = () => {
 			}
 		} catch (err) {
 			if (!isCancelled) {
-				setIsPending(false);
 				setError(err.message);
+				setIsPending(false);
 			}
 		}
 	};

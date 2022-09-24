@@ -1,12 +1,14 @@
 import { useState } from 'react';
+import { useSignin } from '../../hooks/use-signin';
 
 const Signin = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const { signin, isPending, error } = useSignin();
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(email, password);
+		signin(email, password);
 	};
 
 	return (
@@ -34,7 +36,15 @@ const Signin = () => {
 				/>
 			</label>
 
-			<button className="btn">Sign In</button>
+			{!isPending && <button className="btn">Sign In</button>}
+
+			{isPending && (
+				<button className="btn" disabled>
+					Loading...
+				</button>
+			)}
+
+			{error && <div className="error">{error}</div>}
 		</form>
 	);
 };

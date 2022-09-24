@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useAuthContext } from './use-auth-context';
-import { auth, signInWithEmailAndPassword } from '../firebase/config';
+import { auth, signInWithEmailAndPassword, db, doc, updateDoc } from '../firebase/config';
 
 export const useSignin = () => {
 	const [isPending, setIsPending] = useState(false);
@@ -8,16 +8,19 @@ export const useSignin = () => {
 	const [error, setError] = useState(null);
 	const { dispatch } = useAuthContext();
 
-	const signin = (email, password) => {
-		setIsPending(true);
+	const signin = async (email, password) => {
 		setError(null);
+		setIsPending(true);
 
 		try {
 			/** signin procedure */
-			const userCredentials = signInWithEmailAndPassword(auth, email, password);
+			const userCredential = await signInWithEmailAndPassword(auth, email, password);
+
+			/** update online status */
+			await updateDoc(doc(db, 'users', userCredential.user.uid), { online: true });
 
 			/** dispatch signin action */
-			dispatch({ type: 'SIGNIN', payload: userCredentials.user });
+			dispatch({ type: 'SIGNIN', payload: userCredential.user });
 
 			/** update state */
 			if (!isCancelled) {
@@ -26,8 +29,8 @@ export const useSignin = () => {
 			}
 		} catch (err) {
 			if (!isCancelled) {
-				setIsPending(false);
 				setError(err.message);
+				setIsPending(false);
 			}
 		}
 	};

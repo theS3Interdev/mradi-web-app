@@ -9,8 +9,8 @@ export const useSignout = () => {
 	const { dispatch, user } = useAuthContext();
 
 	const signout = async () => {
-		setIsPending(true);
 		setError(null);
+		setIsPending(true);
 
 		try {
 			/** set the "online" field of the user to 'false' */
@@ -31,8 +31,8 @@ export const useSignout = () => {
 			}
 		} catch (err) {
 			if (!isCancelled) {
-				setIsPending(false);
 				setError(err.message);
+				setIsPending(false);
 			}
 		}
 	};
