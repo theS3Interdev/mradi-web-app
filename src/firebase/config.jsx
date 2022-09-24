@@ -17,6 +17,7 @@ import {
 	orderBy,
 	addDoc,
 	doc,
+	setDoc,
 	deleteDoc,
 } from 'firebase/firestore';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
@@ -57,6 +58,7 @@ export {
 	orderBy,
 	addDoc,
 	doc,
+	setDoc,
 	deleteDoc,
 	storage,
 	ref,
