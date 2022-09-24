@@ -22,23 +22,27 @@ export const useSignup = () => {
 
 		try {
 			/** signup procedure */
-			const userCredentials = await createUserWithEmailAndPassword(auth, email, password);
+			const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 
-			if (!userCredentials) {
+			if (!userCredential) {
 				throw new Error('Could not complete the sign up procedure');
 			}
 
-			/** upload user thumbnail */
-			const uploadPath = `thumbnails/${userCredentials.user.uid}/${thumbnail.name}`;
-			const storageRef = await ref(storage, uploadPath);
-			const uploadTask = await uploadBytes(storageRef, thumbnail);
-			const imageUrl = await getDownloadURL(uploadTask);
+			/** create storage reference */
+			const uploadPath = `thumbnails/${userCredential.user.uid}/${thumbnail.name}`;
+			const storageRef = ref(storage, uploadPath);
 
-			/** add the display name to the user profile */
-			await updateProfile(auth.currentUser, { displayName, photoUrl: imageUrl });
+			/** upload user thumbnail to cloud storage */
+			await uploadBytes(storageRef, thumbnail);
+
+			/** get the download url */
+			const imageURL = await getDownloadURL(storageRef);
+
+			/** add the display name and photo url to the user profile */
+			await updateProfile(auth.currentUser, { displayName, photoURL: imageURL });
 
 			/** dispatch signin action */
-			dispatch({ type: 'SIGNIN', payload: userCredentials.user });
+			dispatch({ type: 'SIGNIN', payload: userCredential.user });
 
 			/** update state */
 			if (!isCancelled) {
