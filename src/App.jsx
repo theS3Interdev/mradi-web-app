@@ -15,7 +15,8 @@ const App = () => {
 		<div className="app">
 			{authIsReady && (
 				<BrowserRouter>
-					<Sidebar />
+					{user && <Sidebar />}
+
 					<div className="container">
 						<Navbar />
 						<Routes>

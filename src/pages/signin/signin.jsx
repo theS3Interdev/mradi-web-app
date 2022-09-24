@@ -13,7 +13,7 @@ const Signin = () => {
 
 	return (
 		<form onSubmit={handleSubmit} className="auth-form">
-			<h2 className="font-semibold uppercase">Sign In</h2>
+			<h2 className="font-semibold">Sign in</h2>
 			<label>
 				<span>Email:</span>
 				<input
@@ -36,7 +36,7 @@ const Signin = () => {
 				/>
 			</label>
 
-			{!isPending && <button className="btn">Sign In</button>}
+			{!isPending && <button className="btn">Sign in</button>}
 
 			{isPending && (
 				<button className="btn" disabled>

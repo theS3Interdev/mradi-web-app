@@ -1,14 +1,18 @@
 import { NavLink } from 'react-router-dom';
+import { useAuthContext } from '../hooks/use-auth-context';
+import Avatar from '../components/avatar';
 import DashboardIcon from '../assets/dashboard_icon.svg';
 import AddIcon from '../assets/add_icon.svg';
 
 const Sidebar = () => {
+	const { user } = useAuthContext();
+
 	return (
 		<div className="sidebar">
 			<div className="sidebar-content">
 				<div className="user">
-					{/* avatar and username will go here later */}
-					<p>Hey user</p>
+					<Avatar src={user.photoURL} />
+					<p>Hello, {user.displayName}</p>
 				</div>
 				<nav className="links">
 					<ul>
