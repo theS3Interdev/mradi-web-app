@@ -151,4 +151,22 @@
 		@apply h-full w-full;
 	}
 	/** avatar end */
+
+	/** online users start */
+	.user-list {
+		@apply box-border w-[250px] min-w-[250px] bg-snow p-[30px] text-headingColor;
+	}
+
+	.user-list h2 {
+		@apply mb-10 rounded border-[1px] border-solid border-whisper pb-[10px] text-right text-[1.2em] font-semibold;
+	}
+
+	.user-list .user-list-item {
+		@apply my-5 mx-auto flex items-center justify-end;
+	}
+
+	.user-list .avatar {
+		@apply ml-[10px] h-10 w-10;
+	}
+	/** online users end */
 }

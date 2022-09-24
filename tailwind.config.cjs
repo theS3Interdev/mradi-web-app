@@ -15,6 +15,8 @@ module.exports = {
 				sonicSilver: '#777777',
 				lightGray: '#DDDDDD',
 				darkGray: '#333333',
+				snow: '#FBFBFB',
+				whisper: '#EEEEEE',
 			},
 		},
 	},
