@@ -68,7 +68,7 @@
 	}
 
 	.app .container {
-		@apply grow py-0 px-5;
+		@apply mx-auto grow py-0 px-5;
 	}
 	/** app component end */
 
@@ -130,6 +130,10 @@
 	.sidebar .links .active img {
 		@apply invert-0;
 	}
+
+	.sidebar .user .avatar {
+		@apply mb-[10px] h-[70px] w-[70px] border-[3px] border-solid border-white;
+	}
 	/** sidebar end */
 
 	/** sign up form start*/
@@ -137,4 +141,14 @@
 		@apply my-[60px] mx-auto max-w-[360px] rounded-lg border-[1px] border-solid border-lightGray bg-white p-10 shadow shadow-headingColor;
 	}
 	/** sign up form end*/
+
+	/** avatar start */
+	.avatar {
+		@apply inline-block h-[50px] w-[50px] overflow-hidden rounded-full;
+	}
+
+	.avatar img {
+		@apply h-full w-full;
+	}
+	/** avatar end */
 }

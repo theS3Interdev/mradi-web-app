@@ -12,16 +12,16 @@ const Navbar = () => {
 			<ul>
 				<li className="logo">
 					<img src={MradiLogo} alt="Mradi Logo" />
-					<Link to="/">Mradi by S3</Link>
+					<Link to="/">Mradi Project Management</Link>
 				</li>
 
 				{!user && (
 					<>
 						<li>
-							<Link to="/signin">Sign In</Link>
+							<Link to="/signin">Sign in</Link>
 						</li>
 						<li>
-							<Link to="/signup">Sign Up</Link>
+							<Link to="/signup">Sign up</Link>
 						</li>
 					</>
 				)}
@@ -30,13 +30,13 @@ const Navbar = () => {
 					<li>
 						{!isPending && (
 							<button className="btn" onClick={signout}>
-								Sign Out
+								Sign out
 							</button>
 						)}
 
 						{isPending && (
 							<button className="btn" disabled>
-								Signing Out...
+								Signing out...
 							</button>
 						)}
 					</li>
