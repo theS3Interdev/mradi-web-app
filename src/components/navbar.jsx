@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
+import { useSignout } from '../hooks/use-signout';
 import MradiLogo from '../assets/mradi.svg';
 
 const Navbar = () => {
+	const { signout, isPending } = useSignout();
+
 	return (
 		<nav className="navbar">
 			<ul>
@@ -17,7 +20,17 @@ const Navbar = () => {
 					<Link to="/signup">Sign Up</Link>
 				</li>
 				<li>
-					<button className="btn">Sign Out</button>
+					{!isPending && (
+						<button className="btn" onClick={signout}>
+							Sign Out
+						</button>
+					)}
+
+					{isPending && (
+						<button className="btn" disabled>
+							Signing Out...
+						</button>
+					)}
 				</li>
 			</ul>
 		</nav>
