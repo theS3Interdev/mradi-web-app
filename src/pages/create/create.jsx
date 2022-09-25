@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Select from 'react-select';
-import { useCollection } from '../../hooks/use-collection';
 import { useAuthContext } from '../../hooks/use-auth-context';
+import { useFirestore } from '../../hooks/use-firestore';
+import { useCollection } from '../../hooks/use-collection';
 import { Timestamp } from '../../firebase/config';
 
 const categories = [
@@ -22,7 +24,10 @@ const Create = () => {
 
 	const [users, setUsers] = useState([]);
 	const { user } = useAuthContext();
+	const { addDocument, response } = useFirestore('projects');
 	const { documents } = useCollection('users');
+
+	let navigate = useNavigate();
 
 	/** create user values for react-select */
 	useEffect(() => {
@@ -74,7 +79,13 @@ const Create = () => {
 			createdBy,
 		};
 
-		console.log(project);
+		/** add document to the project collection */
+		await addDocument(project);
+
+		/** navigate to home page if there is no error */
+		if (!response.error) {
+			navigate('/');
+		}
 	};
 
 	return (
