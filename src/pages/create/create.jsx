@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Select from 'react-select';
+import { useCollection } from '../../hooks/use-collection';
 
 const categories = [
 	{ value: 'development', label: 'Development' },
@@ -17,10 +18,24 @@ const Create = () => {
 	const [assignedUsers, setAssignedUsers] = useState([]);
 	const [formError, setFormError] = useState(null);
 
+	const [users, setUsers] = useState([]);
+	const { documents } = useCollection('users');
+
+	/** create user values for react-select */
+	useEffect(() => {
+		if (documents) {
+			setUsers(
+				documents.map((user) => {
+					return { value: { ...user, id: user.id }, label: user.displayName };
+				})
+			);
+		}
+	}, [documents]);
+
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		console.log(name, details, dueDate, category.value, assignedUsers);
+		console.log(name, category.value, details, assignedUsers, dueDate);
 	};
 
 	return (
@@ -28,7 +43,7 @@ const Create = () => {
 			<h2 className="page-title">Create a New Project</h2>
 			<form onSubmit={handleSubmit}>
 				<label>
-					<span>Project Name:</span>
+					<span>Project Name</span>
 					<input
 						required
 						type="text"
@@ -39,7 +54,16 @@ const Create = () => {
 				</label>
 
 				<label>
-					<span>Project Details:</span>
+					<span>Project Category</span>
+					<Select
+						onChange={(option) => setCategory(option)}
+						options={categories}
+						className="rounded"
+					/>
+				</label>
+
+				<label>
+					<span>Project Details</span>
 					<textarea
 						required
 						onChange={(e) => setDetails(e.target.value)}
@@ -49,7 +73,16 @@ const Create = () => {
 				</label>
 
 				<label>
-					<span>Due Date:</span>
+					<span>Assign To</span>
+					<Select
+						onChange={(option) => setAssignedUsers(option)}
+						options={users}
+						isMulti
+					/>
+				</label>
+
+				<label>
+					<span>Due Date</span>
 					<input
 						required
 						type="date"
@@ -57,20 +90,6 @@ const Create = () => {
 						value={dueDate}
 						className="rounded"
 					/>
-				</label>
-
-				<label>
-					<span>Project Category:</span>
-					<Select
-						onChange={(option) => setCategory(option)}
-						options={categories}
-						className="rounded"
-					/>
-				</label>
-
-				<label>
-					<span>Assign To:</span>
-					{/* select here later */}
 				</label>
 
 				<button className="btn">Add Project</button>
