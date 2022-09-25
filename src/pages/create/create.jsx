@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import Select from 'react-select';
 import { useCollection } from '../../hooks/use-collection';
+import { useAuthContext } from '../../hooks/use-auth-context';
+import { Timestamp } from '../../firebase/config';
 
 const categories = [
 	{ value: 'development', label: 'Development' },
@@ -19,6 +21,7 @@ const Create = () => {
 	const [formError, setFormError] = useState(null);
 
 	const [users, setUsers] = useState([]);
+	const { user } = useAuthContext();
 	const { documents } = useCollection('users');
 
 	/** create user values for react-select */
@@ -35,7 +38,43 @@ const Create = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		console.log(name, category.value, details, assignedUsers, dueDate);
+		setFormError(null);
+
+		if (!category) {
+			setFormError('Please select a project category');
+			return;
+		}
+
+		if (assignedUsers.length < 1) {
+			setFormError('Please assign a user to the project');
+			return;
+		}
+
+		const assignedUsersList = assignedUsers.map((u) => {
+			return {
+				displayName: u.value.displayName,
+				photoURL: u.value.photoURL,
+				id: u.value.id,
+			};
+		});
+
+		const createdBy = {
+			displayName: user.displayName,
+			photoURL: user.photoURL,
+			id: user.uid,
+		};
+
+		const project = {
+			name,
+			category: category.value,
+			details,
+			assignedUsersList,
+			dueDate: Timestamp.fromDate(new Date(dueDate)),
+			comments: [],
+			createdBy,
+		};
+
+		console.log(project);
 	};
 
 	return (
