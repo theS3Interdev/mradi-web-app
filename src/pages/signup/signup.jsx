@@ -42,7 +42,7 @@ const Signup = () => {
 		<form onSubmit={handleSubmit} className="auth-form">
 			<h2 className="page-title">Sign up</h2>
 			<label>
-				<span>Email:</span>
+				<span>Email</span>
 				<input
 					type="email"
 					onChange={(e) => setEmail(e.target.value)}
@@ -53,7 +53,7 @@ const Signup = () => {
 			</label>
 
 			<label>
-				<span>Password:</span>
+				<span>Password</span>
 				<input
 					type="password"
 					onChange={(e) => setPassword(e.target.value)}
@@ -64,7 +64,7 @@ const Signup = () => {
 			</label>
 
 			<label>
-				<span>Display Name:</span>
+				<span>Display Name</span>
 				<input
 					type="text"
 					onChange={(e) => setDisplayName(e.target.value)}
@@ -75,7 +75,7 @@ const Signup = () => {
 			</label>
 
 			<label>
-				<span>Profile Thumbnail:</span>
+				<span>Profile Thumbnail</span>
 				<input type="file" onChange={handleFileChange} required className="rounded" />
 
 				{thumbnailError && <div className="error">{thumbnailError}</div>}
