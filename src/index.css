@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	body {
+		@apply m-0 bg-backgroudColor font-ubuntu antialiased;
+	}
+
+	ul,
+	li,
+	p,
+	h1,
+	h2,
+	h3,
+	h4 {
+		@apply m-0 p-0;
+	}
+
+	ul {
+		@apply list-none;
+	}
+}
+
+@layer components {
+	/** page layout start */
+	.page-title {
+		@apply inline-block text-lg text-headingColor;
+	}
+
+	.btn {
+		@apply cursor-pointer rounded-lg border-[1px] border-solid border-primaryColor bg-white py-2 px-3 text-lg text-primaryColor;
+	}
+
+	.btn:hover {
+		@apply bg-primaryColor text-white;
+	}
+	/** page layout end */
+
+	/* forms start */
+	label {
+		@apply my-6 mx-auto block;
+	}
+
+	label span {
+		@apply mb-[6px] block;
+	}
+
+	input,
+	textarea {
+		@apply box-border w-full rounded border-[1px] border-solid border-sonicSilver py-2 px-[6px] text-lg text-sonicSilver;
+	}
+
+	textarea {
+		@apply min-h-[160px] rounded;
+	}
+
+	.error {
+		@apply my-5 mx-0 rounded-lg border-[1px] border-solid border-red-600 bg-pink-300 p-2 text-red-600;
+	}
+	/* forms end */
+
+	/** app component start */
+	.app {
+		@apply flex;
+	}
+
+	.app .container {
+		@apply mx-auto grow py-0 px-5;
+	}
+	/** app component end */
+
+	/** navigation bar start */
+	.navbar {
+		@apply mb-20 box-border w-full py-[30px] px-0;
+	}
+
+	.navbar ul {
+		@apply my-0 mx-auto flex items-center justify-end;
+	}
+
+	.navbar .logo {
+		@apply mr-auto flex items-center text-2xl font-bold tracking-wide text-headingColor;
+	}
+
+	.navbar .logo img {
+		@apply mr-[10px] -mt-1 w-9 invert-0;
+	}
+
+	.navbar a {
+		@apply mr-5 text-darkGray no-underline;
+	}
+	/** navigation bar end */
+
+	/** sidebar start */
+	.sidebar {
+		@apply relative box-border min-h-screen w-[300px] min-w-[300px] bg-primaryColor text-white;
+	}
+
+	.sidebar-content {
+		@apply fixed w-[inherit];
+	}
+
+	.sidebar .user {
+		@apply border-[1px] border-solid border-headingColor py-10 px-[30px] text-center font-bold tracking-wide;
+	}
+
+	.sidebar .links {
+		@apply mt-20 ml-5;
+	}
+
+	.sidebar .links li {
+		@apply mt-[10px];
+	}
+
+	.sidebar .links a {
+		@apply box-border flex w-full p-[10px] text-white no-underline;
+	}
+
+	.sidebar .links img {
+		@apply mr-[10px] invert-0;
+	}
+
+	.sidebar .links a.active {
+		@apply rounded-t-lg rounded-r-none rounded-b-none rounded-l-lg bg-backgroudColor text-textColor;
+	}
+
+	.sidebar .links .active img {
+		@apply invert-0;
+	}
+
+	.sidebar .user .avatar {
+		@apply mb-[10px] h-[70px] w-[70px] border-[3px] border-solid border-white;
+	}
+	/** sidebar end */
+
+	/** sign up form start*/
+	.auth-form {
+		@apply my-[60px] mx-auto max-w-[360px] rounded-lg border-[1px] border-solid border-lightGray bg-white p-10 shadow shadow-headingColor;
+	}
+	/** sign up form end*/
+
+	/** avatar start */
+	.avatar {
+		@apply inline-block h-[50px] w-[50px] overflow-hidden rounded-full;
+	}
+
+	.avatar img {
+		@apply h-full w-full;
+	}
+	/** avatar end */
+
+	/** online users start */
+	.user-list {
+		@apply box-border w-[250px] min-w-[250px] bg-snow p-[30px] text-headingColor;
+	}
+
+	.user-list h2 {
+		@apply mb-10 rounded border-[1px] border-solid border-snow pb-[10px] text-right text-[1.2em] font-semibold;
+	}
+
+	.user-list .user-list-item {
+		@apply my-5 mx-auto flex items-center justify-end;
+	}
+
+	.user-list .avatar {
+		@apply ml-[10px] h-10 w-10;
+	}
+
+	.user-list .online-user {
+		@apply mr-2 mt-0 inline-block h-3 w-3 rounded-full bg-greenCyan;
+	}
+	/** online users end */
+}
