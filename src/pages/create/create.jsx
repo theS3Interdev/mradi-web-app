@@ -1,4 +1,12 @@
 import { useState } from 'react';
+import Select from 'react-select';
+
+const categories = [
+	{ value: 'development', label: 'Development' },
+	{ value: 'design', label: 'Design' },
+	{ value: 'sales', label: 'Sales' },
+	{ value: 'marketing', label: 'Marketing' },
+];
 
 const Create = () => {
 	/** form field values */
@@ -7,11 +15,12 @@ const Create = () => {
 	const [dueDate, setDueDate] = useState('');
 	const [category, setCategory] = useState('');
 	const [assignedUsers, setAssignedUsers] = useState([]);
+	const [formError, setFormError] = useState(null);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		console.log(name, details, dueDate);
+		console.log(name, details, dueDate, category.value, assignedUsers);
 	};
 
 	return (
@@ -52,7 +61,11 @@ const Create = () => {
 
 				<label>
 					<span>Project Category:</span>
-					{/* select here later */}
+					<Select
+						onChange={(option) => setCategory(option)}
+						options={categories}
+						className="rounded"
+					/>
 				</label>
 
 				<label>
@@ -61,6 +74,8 @@ const Create = () => {
 				</label>
 
 				<button className="btn">Add Project</button>
+
+				{formError && <p className="error">{formError}</p>}
 			</form>
 		</div>
 	);
