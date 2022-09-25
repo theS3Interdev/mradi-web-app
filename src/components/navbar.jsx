@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useAuthContext } from '../hooks/use-auth-context';
 import { useSignout } from '../hooks/use-signout';
-import MradiLogo from '../assets/mradi.svg';
+import MradiLogo from '../assets/s3_mradi.png';
 
 const Navbar = () => {
 	const { signout, isPending } = useSignout();

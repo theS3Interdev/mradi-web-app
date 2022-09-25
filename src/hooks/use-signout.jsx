@@ -13,9 +13,9 @@ export const useSignout = () => {
 		setIsPending(true);
 
 		try {
-			/** set the "online" field of the user to 'false' */
 			const { uid } = user;
 
+			/** set the "online" field of the user to 'false' */
 			await updateDoc(doc(db, 'users', uid), { online: false });
 
 			/** signout procedure */
