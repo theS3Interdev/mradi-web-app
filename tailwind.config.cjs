@@ -17,6 +17,7 @@ module.exports = {
 				darkGray: '#333333',
 				snow: '#FBFBFB',
 				whisper: '#EEEEEE',
+				greenCyan: '#0EBB50',
 			},
 		},
 	},
