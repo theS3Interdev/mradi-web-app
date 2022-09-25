@@ -13,7 +13,7 @@ const Signin = () => {
 
 	return (
 		<form onSubmit={handleSubmit} className="auth-form">
-			<h2 className="font-semibold">Sign in</h2>
+			<h2 className="page-title">Sign in</h2>
 			<label>
 				<span>Email:</span>
 				<input

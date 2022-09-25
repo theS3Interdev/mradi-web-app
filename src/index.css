@@ -27,7 +27,7 @@
 @layer components {
 	/** page layout start */
 	.page-title {
-		@apply inline-block text-lg text-headingColor;
+		@apply inline-block text-lg font-semibold text-headingColor;
 	}
 
 	.btn {
@@ -68,7 +68,7 @@
 	}
 
 	.app .container {
-		@apply mx-auto grow py-0 px-5;
+		@apply mx-auto grow py-0 px-10;
 	}
 	/** app component end */
 
@@ -104,7 +104,7 @@
 	}
 
 	.sidebar .user {
-		@apply border-[1px] border-solid border-headingColor py-10 px-[30px] text-center font-bold tracking-wide;
+		@apply border-[1px] border-solid border-t-primaryColor border-r-primaryColor border-b-backgroudColor border-l-primaryColor py-10 px-[30px] text-center font-bold tracking-wide;
 	}
 
 	.sidebar .links {
@@ -158,7 +158,7 @@
 	}
 
 	.user-list h2 {
-		@apply mb-10 rounded border-[1px] border-solid border-snow pb-[10px] text-right text-[1.2em] font-semibold;
+		@apply mb-10 border-[1px] border-solid border-t-snow border-l-snow border-b-textColor border-r-snow pb-[10px] text-right text-[1.2em] font-semibold;
 	}
 
 	.user-list .user-list-item {
@@ -173,4 +173,10 @@
 		@apply mr-2 mt-0 inline-block h-3 w-3 rounded-full bg-greenCyan;
 	}
 	/** online users end */
+
+	/** create form start */
+	.create-form {
+		@apply max-w-[600px];
+	}
+	/** create form end */
 }
