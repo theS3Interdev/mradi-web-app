@@ -44,4 +44,4 @@ jobs:
         with:
           args: deploy --only firestore,storage,hosting
         env:
-          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+          GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MRADI_PROJECT_MANAGEMENT }}
