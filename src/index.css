@@ -179,4 +179,38 @@
 		@apply max-w-[600px];
 	}
 	/** create form end */
+
+	/** project list start */
+	.project-list {
+		@apply mt-10 grid grid-cols-3 gap-5;
+	}
+
+	.project-list a {
+		@apply rounded-md bg-white p-4 no-underline shadow-md shadow-headingColor;
+	}
+
+	.project-list h4 {
+		@apply text-[0.9em] text-headingColor;
+	}
+
+	.project-list p {
+		@apply text-[0.9em] text-textColor;
+	}
+
+	.project-list .assigned-to {
+		@apply mt-5 border-[1px] border-solid border-whisper pt-[10px];
+	}
+
+	.project-list ul {
+		@apply my-[10px] mx-0 flex;
+	}
+
+	.project-list li {
+		@apply mr-[10px];
+	}
+
+	.project-list .avatar {
+		@apply h-[30px] w-[30px];
+	}
+	/** project list end */
 }

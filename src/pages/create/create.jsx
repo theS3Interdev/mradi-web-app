@@ -82,7 +82,7 @@ const Create = () => {
 		/** add document to the project collection */
 		await addDocument(project);
 
-		/** navigate to home page if there is no error */
+		/** navigate to the dashboard if there is no error */
 		if (!response.error) {
 			navigate('/');
 		}
