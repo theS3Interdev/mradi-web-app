@@ -31,7 +31,7 @@
 	}
 
 	.btn {
-		@apply cursor-pointer rounded-lg border-[1px] border-solid border-primaryColor bg-white py-2 px-3 text-lg text-primaryColor;
+		@apply cursor-pointer rounded-lg border-[1px] border-solid border-primaryColor bg-white py-2 px-3 text-primaryColor;
 	}
 
 	.btn:hover {
@@ -170,7 +170,7 @@
 	}
 
 	.user-list .online-user {
-		@apply mr-2 mt-0 inline-block h-3 w-3 rounded-full bg-greenCyan;
+		@apply mr-2 mt-0 inline-block h-2 w-2 rounded-full bg-greenCyan;
 	}
 	/** online users end */
 
@@ -249,4 +249,14 @@
 		@apply mt-5;
 	}
 	/** project summary end */
+
+	/** project comments start */
+	.project-comments label {
+		@apply mb-0;
+	}
+
+	.project-comments textarea {
+		@apply mb-4 min-h-[40px];
+	}
+	/** project comments end */
 }
