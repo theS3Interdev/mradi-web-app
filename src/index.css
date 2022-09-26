@@ -27,11 +27,11 @@
 @layer components {
 	/** page layout start */
 	.page-title {
-		@apply inline-block text-lg text-headingColor;
+		@apply inline-block text-lg font-semibold text-headingColor;
 	}
 
 	.btn {
-		@apply cursor-pointer rounded-lg border-[1px] border-solid border-primaryColor bg-white py-2 px-3 text-lg text-primaryColor;
+		@apply cursor-pointer rounded-lg border-[1px] border-solid border-primaryColor bg-white py-2 px-3 text-primaryColor;
 	}
 
 	.btn:hover {
@@ -50,7 +50,7 @@
 
 	input,
 	textarea {
-		@apply box-border w-full rounded border-[1px] border-solid border-sonicSilver py-2 px-[6px] text-lg text-sonicSilver;
+		@apply box-border w-full rounded border-[1px] border-solid border-sonicSilver py-2 px-[6px] text-sonicSilver;
 	}
 
 	textarea {
@@ -58,7 +58,7 @@
 	}
 
 	.error {
-		@apply my-5 mx-0 rounded-lg border-[1px] border-solid border-red-600 bg-pink-300 p-2 text-red-600;
+		@apply my-5 mx-0 rounded border-[1px] border-solid border-red-600 bg-pink-300 p-2 text-red-600;
 	}
 	/* forms end */
 
@@ -104,7 +104,7 @@
 	}
 
 	.sidebar .user {
-		@apply border-[1px] border-solid border-headingColor py-10 px-[30px] text-center font-bold tracking-wide;
+		@apply border-[1px] border-solid border-t-primaryColor border-r-primaryColor border-b-backgroudColor border-l-primaryColor py-10 px-[30px] text-center font-bold tracking-wide;
 	}
 
 	.sidebar .links {
@@ -158,7 +158,7 @@
 	}
 
 	.user-list h2 {
-		@apply mb-10 rounded border-[1px] border-solid border-snow pb-[10px] text-right text-[1.2em] font-semibold;
+		@apply mb-10 border-[1px] border-solid border-t-snow border-l-snow border-b-textColor border-r-snow pb-[10px] text-right text-[1.2em] font-semibold;
 	}
 
 	.user-list .user-list-item {
@@ -170,7 +170,119 @@
 	}
 
 	.user-list .online-user {
-		@apply mr-2 mt-0 inline-block h-3 w-3 rounded-full bg-greenCyan;
+		@apply mr-2 mt-0 inline-block h-2 w-2 rounded-full bg-greenCyan;
 	}
 	/** online users end */
+
+	/** create form start */
+	.create-form {
+		@apply max-w-[600px];
+	}
+	/** create form end */
+
+	/** project list start */
+	.project-list {
+		@apply mt-10 grid grid-cols-3 gap-5;
+	}
+
+	.project-list a {
+		@apply rounded-md bg-white p-4 no-underline shadow shadow-headingColor;
+	}
+
+	.project-list h4 {
+		@apply text-[0.9em] text-headingColor;
+	}
+
+	.project-list p {
+		@apply text-[0.9em] text-textColor;
+	}
+
+	.project-list .assigned-to {
+		@apply mt-5 rounded border-[1px] border-solid border-whisper p-[10px];
+	}
+
+	.project-list ul {
+		@apply my-[10px] mx-0 flex;
+	}
+
+	.project-list li {
+		@apply mr-[10px];
+	}
+
+	.project-list .avatar {
+		@apply h-[30px] w-[30px];
+	}
+	/** project list end */
+
+	/** project details start */
+	.project-details {
+		@apply grid grid-cols-2 items-start gap-[60px];
+	}
+	/** project details end */
+
+	/** project summary start */
+	.project-summary {
+		@apply rounded bg-white p-[30px];
+	}
+
+	.project-summary .due-date {
+		@apply my-[10px] mx-0 text-[0.9em] text-headingColor;
+	}
+
+	.project-summary .details {
+		@apply my-[30px] mx-0 text-[0.9em] leading-7 text-headingColor;
+	}
+
+	.project-summary h4 {
+		@apply text-[0.9em] text-headingColor;
+	}
+
+	.project-summary .assigned-users {
+		@apply mt-5 flex;
+	}
+
+	.project-summary .assigned-users .avatar {
+		@apply mr-[10px];
+	}
+
+	.project-summary + .btn {
+		@apply mt-5;
+	}
+	/** project summary end */
+
+	/** project comments start */
+	.project-comments label {
+		@apply mb-0;
+	}
+
+	.project-comments textarea {
+		@apply mb-4 min-h-[40px];
+	}
+	/** project comments end */
+
+	/** comment list start */
+	.project-comments h4 {
+		@apply font-semibold text-headingColor;
+	}
+
+	.project-comments li {
+		@apply mt-5 rounded border-[1px] border-solid border-gray-200 bg-white p-4 shadow shadow-headingColor;
+	}
+
+	.comment-author {
+		@apply flex items-center font-semibold text-headingColor;
+	}
+
+	.comment-author .avatar {
+		@apply mr-[10px] h-[30px] w-[30px];
+	}
+
+	.comment-date {
+		@apply mx-0 mt-1 mb-[10px] text-[0.9em] text-headingColor;
+	}
+
+	.comment-content {
+		@apply text-[0.9em] text-headingColor;
+	}
+	/** comment list end */
 }

@@ -13,9 +13,9 @@ const Signin = () => {
 
 	return (
 		<form onSubmit={handleSubmit} className="auth-form">
-			<h2 className="font-semibold">Sign in</h2>
+			<h2 className="page-title">Sign in</h2>
 			<label>
-				<span>Email:</span>
+				<span>Email</span>
 				<input
 					type="email"
 					onChange={(e) => setEmail(e.target.value)}
@@ -26,7 +26,7 @@ const Signin = () => {
 			</label>
 
 			<label>
-				<span>Password:</span>
+				<span>Password</span>
 				<input
 					type="password"
 					onChange={(e) => setPassword(e.target.value)}
