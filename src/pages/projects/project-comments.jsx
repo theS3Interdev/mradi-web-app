@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { useAuthContext } from '../../hooks/use-auth-context';
+import { useFirestore } from '../../hooks/use-firestore';
 import { Timestamp } from '../../firebase/config';
 
-const ProjectComments = () => {
+const ProjectComments = ({ project }) => {
 	const { user } = useAuthContext();
+	const { updateDocument, response } = useFirestore('projects');
 	const [newComment, setNewComment] = useState('');
 
 	const handleSubmit = async (e) => {
@@ -14,10 +17,16 @@ const ProjectComments = () => {
 			photoURL: user.photoURL,
 			content: newComment,
 			createdAt: Timestamp.fromDate(new Date()),
-			id: Math.random(),
+			id: uuidv4(),
 		};
 
-		console.log(commentToAdd);
+		/** add comment to the project collection */
+		await updateDocument(project.id, { comments: [...project.comments, commentToAdd] });
+
+		/** clear comment field if there is no error */
+		if (!response.error) {
+			setNewComment('');
+		}
 	};
 
 	return (
