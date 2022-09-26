@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { db, doc, onSnapshot } from '../firebase/config';
 
-export const useDocument = (collection, id) => {
+export const useDocument = (col, id) => {
 	const [document, setDocument] = useState(null);
 	const [error, setError] = useState(null);
 
 	/** realtime document data */
 	useEffect(() => {
 		const unsubscribe = onSnapshot(
-			doc(db, collection, id),
+			doc(db, col, id),
 			(snapshot) => {
 				/** ensure the document exists and has data */
 				if (snapshot.data()) {
@@ -26,7 +26,7 @@ export const useDocument = (collection, id) => {
 
 		/** unsubscribe on unmount */
 		return () => unsubscribe();
-	}, [collection, id]);
+	}, [col, id]);
 
 	return { document, error };
 };

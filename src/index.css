@@ -219,4 +219,34 @@
 		@apply grid grid-cols-2 items-start gap-[60px];
 	}
 	/** project details end */
+
+	/** project summary start */
+	.project-summary {
+		@apply rounded bg-white p-[30px];
+	}
+
+	.project-summary .due-date {
+		@apply my-[10px] mx-0 text-[0.9em] text-headingColor;
+	}
+
+	.project-summary .details {
+		@apply my-[30px] mx-0 text-[0.9em] leading-7 text-headingColor;
+	}
+
+	.project-summary h4 {
+		@apply text-[0.9em] text-headingColor;
+	}
+
+	.project-summary .assigned-users {
+		@apply mt-5 flex;
+	}
+
+	.project-summary .assigned-users .avatar {
+		@apply mr-[10px];
+	}
+
+	.project-summary + .btn {
+		@apply mt-5;
+	}
+	/** project summary end */
 }
