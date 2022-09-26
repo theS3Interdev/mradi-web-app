@@ -46,10 +46,10 @@ const storage = getStorage(app);
 export {
 	auth,
 	onAuthStateChanged,
-	signInWithEmailAndPassword,
-	signOut,
 	createUserWithEmailAndPassword,
+	signInWithEmailAndPassword,
 	updateProfile,
+	signOut,
 	db,
 	Timestamp,
 	collection,

@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { useAuthContext } from '../../hooks/use-auth-context';
 import { useFirestore } from '../../hooks/use-firestore';
 import { Timestamp } from '../../firebase/config';
+import Avatar from '../../components/avatar';
 
 const ProjectComments = ({ project }) => {
 	const { user } = useAuthContext();
@@ -31,7 +32,25 @@ const ProjectComments = ({ project }) => {
 
 	return (
 		<div className="project-comments">
-			<h4 className="font-semibold">Project Comments</h4>
+			<h4>Project Comments</h4>
+
+			<ul>
+				{project.comments.length > 0 &&
+					project.comments.map((comment) => (
+						<li key={comment.id}>
+							<div className="comment-author">
+								<Avatar src={comment.photoURL} />
+								<p>{comment.displayName}</p>
+							</div>
+							<div className="comment-date">
+								<p>date here</p>
+							</div>
+							<div className="comment-content">
+								<p>{comment.content}</p>
+							</div>
+						</li>
+					))}
+			</ul>
 
 			<form className="add-comment" onSubmit={handleSubmit}>
 				<label>

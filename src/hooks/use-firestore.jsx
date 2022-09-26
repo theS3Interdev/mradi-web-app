@@ -3,10 +3,10 @@ import {
 	db,
 	collection,
 	Timestamp,
-	addDoc,
 	doc,
-	deleteDoc,
+	addDoc,
 	updateDoc,
+	deleteDoc,
 } from '../firebase/config';
 
 let initialState = { success: null, isPending: false, error: null, document: null };
@@ -58,7 +58,7 @@ export const useFirestore = (col) => {
 		dispatch({ type: 'IS_PENDING' });
 
 		try {
-			const updatedDocument = await updateDoc(doc(db, col, id), { updates });
+			const updatedDocument = await updateDoc(doc(db, col, id), updates);
 
 			dispatchIfNotCancelled({ type: 'UPDATED_DOCUMENT', payload: updatedDocument });
 			return updatedDocument;

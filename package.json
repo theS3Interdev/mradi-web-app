@@ -1,7 +1,7 @@
 {
 	"name": "mradi-project-management",
 	"private": true,
-	"version": "0.34.10",
+	"version": "0.36.12",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
