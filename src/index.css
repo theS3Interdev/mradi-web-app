@@ -68,7 +68,7 @@
 	}
 
 	.app .container {
-		@apply mx-auto grow py-0 px-10;
+		@apply mx-auto grow py-0 px-5;
 	}
 	/** app component end */
 
@@ -198,7 +198,7 @@
 	}
 
 	.project-list .assigned-to {
-		@apply mt-5 border-[1px] border-solid border-whisper pt-[10px];
+		@apply mt-5 rounded border-[1px] border-solid border-whisper p-[10px];
 	}
 
 	.project-list ul {
