@@ -29,8 +29,9 @@ export const AuthContextProvider = ({ children }) => {
 		});
 	}, []);
 
-	/** for visual confirmation purposes */
-	console.log('Authentication State: ', state);
+	/** for visual confirmation purposes
+	 * console.log('Authentication State: ', state);
+	 */
 
 	return (
 		<AuthContext.Provider value={{ ...state, dispatch }}>{children}</AuthContext.Provider>
