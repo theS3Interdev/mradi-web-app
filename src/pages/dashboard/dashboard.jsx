@@ -1,9 +1,15 @@
+import { useState } from 'react';
 import { useCollection } from '../../hooks/use-collection';
 import ProjectList from '../../components/project-list';
 import ProjectFilter from './project-filter';
 
 const Dashboard = () => {
+	const [filter, setFilter] = useState('all');
 	const { documents, error } = useCollection('projects');
+
+	const changeFilter = (newFilter) => {
+		setFilter(newFilter);
+	};
 
 	return (
 		<div>
@@ -11,7 +17,7 @@ const Dashboard = () => {
 
 			{error && <p className="error">{error}</p>}
 
-			{documents && <ProjectFilter />}
+			{documents && <ProjectFilter changeFilter={changeFilter} />}
 
 			{documents && <ProjectList projects={documents} />}
 		</div>
