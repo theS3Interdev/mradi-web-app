@@ -50,7 +50,7 @@
 
 	input,
 	textarea {
-		@apply box-border w-full rounded border-[1px] border-solid border-sonicSilver py-2 px-[6px] text-sonicSilver;
+		@apply box-border w-full rounded border-[1px] border-solid border-[#777777] py-2 px-[6px] text-[#777777];
 	}
 
 	textarea {
@@ -90,7 +90,7 @@
 	}
 
 	.navbar a {
-		@apply mr-5 text-darkGray no-underline;
+		@apply mr-5 text-[#333333] no-underline;
 	}
 	/** navigation bar end */
 
@@ -138,7 +138,7 @@
 
 	/** sign up form start*/
 	.auth-form {
-		@apply my-[60px] mx-auto max-w-[360px] rounded-lg border-[1px] border-solid border-lightGray bg-white p-10 shadow shadow-headingColor;
+		@apply my-[60px] mx-auto max-w-[360px] rounded-lg border-[1px] border-solid border-[#DDDDDD] bg-white p-10 shadow shadow-headingColor;
 	}
 	/** sign up form end*/
 
@@ -154,11 +154,11 @@
 
 	/** online users start */
 	.user-list {
-		@apply box-border w-[250px] min-w-[250px] bg-snow p-[30px] text-headingColor;
+		@apply box-border w-[250px] min-w-[250px] bg-[#FBFBFB] p-[30px] text-headingColor;
 	}
 
 	.user-list h2 {
-		@apply mb-10 border-[1px] border-solid border-t-snow border-l-snow border-b-textColor border-r-snow pb-[10px] text-right text-[1.2em] font-semibold;
+		@apply mb-10 border-[1px] border-solid border-t-[#FBFBFB] border-l-[#FBFBFB] border-b-textColor border-r-[#FBFBFB] pb-[10px] text-right text-[1.2em] font-semibold;
 	}
 
 	.user-list .user-list-item {
@@ -170,7 +170,7 @@
 	}
 
 	.user-list .online-user {
-		@apply mr-2 mt-0 inline-block h-2 w-2 rounded-full bg-greenCyan;
+		@apply mr-2 mt-0 inline-block h-2 w-2 rounded-full bg-[#0EBB50];
 	}
 	/** online users end */
 
@@ -198,7 +198,7 @@
 	}
 
 	.project-list .assigned-to {
-		@apply mt-5 rounded border-[1px] border-solid border-whisper p-[10px];
+		@apply mt-5 rounded border-[1px] border-solid border-[#EEEEEE] p-[10px];
 	}
 
 	.project-list ul {
@@ -285,4 +285,30 @@
 		@apply text-[0.9em] text-headingColor;
 	}
 	/** comment list end */
+
+	/** project filter start */
+	.project-filter {
+		@apply my-[30px] mx-auto;
+	}
+
+	.project-filter nav {
+		@apply flex rounded bg-white p-[10px];
+	}
+
+	.project-filter p {
+		@apply mr-[10px] text-[0.9em];
+	}
+
+	.project-filter button {
+		@apply cursor-pointer border-0 border-r-[1px] border-r-[#E4E4E4] bg-transparent px-3 text-[0.9em] font-semibold text-headingColor;
+	}
+
+	.project-filter button:last-child {
+		@apply border-0;
+	}
+
+	.project-filter button.active {
+		@apply text-primaryColor;
+	}
+	/** project filter end */
 }

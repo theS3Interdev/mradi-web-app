@@ -14,11 +14,11 @@ const ProjectComments = ({ project }) => {
 		e.preventDefault();
 
 		const commentToAdd = {
+			id: uuidv4(),
 			displayName: user.displayName,
 			photoURL: user.photoURL,
 			content: newComment,
 			createdAt: Timestamp.fromDate(new Date()),
-			id: uuidv4(),
 		};
 
 		/** add comment to the project collection */
