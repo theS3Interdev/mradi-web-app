@@ -35,5 +35,5 @@ yarn dev
 1. Vite.JS
 1. Firebase Cloud Firestore
 1. Firebase Storeage
-1. GitHub Actions
-1. GitHub Pages
+1. Firebase Authentication
+1. Netlify Hosting
